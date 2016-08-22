@@ -3,32 +3,31 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class DataSaver {
-
+ class DataSaver {
 
     private FileWriter writer;
 
-
-
-    public DataSaver(File file){
+    DataSaver(File file, int collectionSize){
 
         try{
             writer = new FileWriter(file, true);
+            String sizeOfCollection = String.format("%-17s%-2d%n", "Collection size: ", collectionSize);
             String header =String.format("%-12s%-6s%-11s%-9s%-11s%-11s%-14s%-6s%n",
                     "Name","Add","Contains", "Remove", "Populate", "Iter.add",
                     "Iter.remove","Get");
             String line =String.format("%s%n","----------------------------------------------------------------------------------");
+            writer.write(sizeOfCollection);
             writer.write(header);
             writer.write(line);
             writer.flush();
 
         } catch (IOException ex){
-
+            ex.printStackTrace();
         }
     }
 
     void saveData(Data data){
-        String toWrite = "File not found ";
+        String toWrite = "File not found";
         if (data instanceof SetData) {
             SetData setData = (SetData) data;
             toWrite = String.format("%-12s%-8.2f%-11.2f%-10.2f%-10.2f%n",

@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-public class DataInitializer {
+class DataInitializer {
 
     static double addTest(Collection<Integer> c, int amount){
 

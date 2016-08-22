@@ -1,7 +1,7 @@
+
 #folder
 .idea/*
-.target/*
-.out/
 *.iml
-*.txt
+out/
+
 

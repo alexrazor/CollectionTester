@@ -11,16 +11,18 @@ public class Runner {
     private Data arrayListData;
     private Data linkedListData;
 
+    private static int collectionSize = 20000;
+
     public static void main(String[] args) {
         Runner runner = new Runner();
-        runner.getData(10000);
+        runner.getData(collectionSize);
         runner.printData();
         runner.saveData();
     }
 
     private void saveData() {
         File file = new File("result.txt");
-        DataSaver ds = new DataSaver(file);
+        DataSaver ds = new DataSaver(file,collectionSize);
         ds.saveData(arrayListData);
         ds.saveData(linkedListData);
         ds.saveData(hashSetData);
@@ -29,7 +31,7 @@ public class Runner {
 
     private void printData() {
 
-        DataPrinter dp = new DataPrinter();
+        DataPrinter dp = new DataPrinter(collectionSize);
         dp.printData(arrayListData);
         dp.printData(linkedListData);
         dp.printData(hashSetData);

@@ -1,8 +1,8 @@
 import java.util.Set;
 
-public class SetData extends Data {
+class SetData extends Data {
 
-        public SetData(String name, Set<Integer> set,Set<Integer> set2, int setSize){
+        SetData(String name, Set<Integer> set,Set<Integer> set2, int setSize){
             super(name);
             this.addAvgValue = DataInitializer.addTest(set, setSize);
             this.removeAvgValue = DataInitializer.removeTest(set, setSize);
