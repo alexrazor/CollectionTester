@@ -1,3 +1,5 @@
+package com.app;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.ListIterator;
@@ -6,8 +8,8 @@ import java.util.ListIterator;
 class DataInitializer {
 
     static double addTest(Collection<Integer> c, int collectionSize, int amountOfTimes){
-
         long totalTime=0;
+
         for (int amount=0; amount<amountOfTimes;amount++){
 
             long start = System.currentTimeMillis();
@@ -18,12 +20,12 @@ class DataInitializer {
             totalTime+=finish;
             c.clear();
         }
-
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
 
     static double removeTest(Collection<Integer> c, int collectionSize, int amountOfTimes){
         long totalTime = 0;
+
         for (int amount=0; amount<amountOfTimes; amount++){
             for (int i=0; i<collectionSize; i++){
                 c.add(i);
@@ -38,8 +40,10 @@ class DataInitializer {
         }
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
+
     static double containsTest(Collection<Integer> c, int collectionSize, int amountOfTimes){
         long totalTime=0;
+
         for (int amount=0; amount<amountOfTimes; amount++){
             for (int i=0; i<collectionSize; i++){
                 c.add(i);
@@ -54,9 +58,10 @@ class DataInitializer {
         }
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
-    static double populateTest(Collection<Integer> c,Collection<Integer> d, int collectionSize, int amountOfTimes){
 
+    static double populateTest(Collection<Integer> c,Collection<Integer> d, int collectionSize, int amountOfTimes){
         long totalTime=0;
+
         for (int amount=0; amount<amountOfTimes; amount++){
             for (int i=0; i<collectionSize; i++){
                 c.add(i);
@@ -71,9 +76,10 @@ class DataInitializer {
         }
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
-    static double listIteratorAddTest(List<Integer> list, int listSize, int amountOfTimes){
 
+    static double listIteratorAddTest(List<Integer> list, int listSize, int amountOfTimes){
         long totalTime=0;
+
         for (int amount=0; amount<amountOfTimes; amount++){
             ListIterator<Integer> iterator = list.listIterator();
             long start = System.currentTimeMillis();
@@ -86,9 +92,10 @@ class DataInitializer {
         }
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
-    static double listIteratorRemoveTest(List<Integer> list, int listSize, int amountOfTimes){
 
+    static double listIteratorRemoveTest(List<Integer> list, int listSize, int amountOfTimes){
         long totalTime=0;
+
         for (int amount=0; amount<amountOfTimes; amount++){
             for (int i=0; i<listSize; i++){
                 list.add(i);
@@ -102,13 +109,13 @@ class DataInitializer {
             long finish = System.currentTimeMillis()-start;
             totalTime+=finish;
             list.clear();
-
         }
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
-    static double getTest(List<Integer> list, int listSize, int amountOfTimes){
 
+    static double getTest(List<Integer> list, int listSize, int amountOfTimes){
         long totalTime=0;
+
         for (int amount=0; amount<amountOfTimes; amount++){
             for (int i=0; i<listSize; i++){
                 list.add(i);
@@ -120,7 +127,6 @@ class DataInitializer {
             long finish = System.currentTimeMillis()-start;
             totalTime+=finish;
             list.clear();
-
         }
         return ((totalTime*1.0d)/amountOfTimes)/(1000*1.0d);
     }
