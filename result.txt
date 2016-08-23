@@ -1,7 +1,0 @@
-Collection size: 20000
-Name        Add   Contains   Remove   Populate   Iter.add   Iter.remove   Get   
-----------------------------------------------------------------------------------
-arrayList   0,00    7,02       0,13      0,00       0,52       1,29       0,00       
-linkedList  0,00    6,31       0,00      0,00       0,00       0,00       0,22       
-hashSet     0,01    0,00       0,00      0,00      
-treeSet     0,01    0,00       0,01      0,01      
